@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Makanan;
 use Illuminate\Http\Request;
 
 class MakananController extends Controller
@@ -13,15 +13,11 @@ class MakananController extends Controller
      */
     public function index()
     {
-        /**$title="Makanan";
-        echo $title;**/
-        return view('admin.makanan');
+        $title="Makanan";
+        $makanan=Makanan::paginate(5);
+        //dd($makanan);
+        return view('admin.makanan',compact('title','makanan'));
     }
-
-    //public function test()
-    //{
-      //  return view('testcontent');
-   // }
 
     /**
      * Show the form for creating a new resource.
@@ -31,6 +27,8 @@ class MakananController extends Controller
     public function create()
     {
         //
+        $title="inputmakanan";
+        return view('admin.inputmakanan',compact('title'));
     }
 
     /**
@@ -42,6 +40,19 @@ class MakananController extends Controller
     public function store(Request $request)
     {
         //
+        $messages = [
+            'required'=> 'kolom:attribut harus lengkap',
+            'date'    => 'kolom:attribut harus tanggal',
+            'numeric'=> 'kolom:attribut harus angka',
+        ];
+        $validasi = $request->validate([
+            'nama_makanan' => 'required',
+            'jenis' => '',
+            'harga' => '',
+        ],$messages);
+        //dd($validasi);
+        Makanan::create($validasi);
+        return redirect('makanan')-> with('success','data berhasil di update');
     }
 
     /**
@@ -64,6 +75,9 @@ class MakananController extends Controller
     public function edit($id)
     {
         //
+        $title="inputmakanan";
+        $makanan=Makanan::find($id);
+        return view('admin.inputmakanan',compact('title','makanan'));
     }
 
     /**
@@ -76,6 +90,19 @@ class MakananController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $messages = [
+            'required'=> 'kolom:attribut harus lengkap',
+            'date'    => 'kolom:attribut harus tanggal',
+            'numeric'=> 'kolom:attribut harus angka',
+        ];
+        $validasi = $request->validate([
+            'nama_makanan' => 'required',
+            'jenis' => 'required',
+            'harga' => 'required',
+        ],$messages);
+        //dd($validasi);
+        Makanan::whereid_makanan($id)->update($validasi);
+        return redirect('makanan')-> with('success','data berhasil di update');
     }
 
     /**
@@ -87,5 +114,7 @@ class MakananController extends Controller
     public function destroy($id)
     {
         //
+        Makanan::whereid_makanan($id)->delete();
+        return redirect('makanan')-> with('success','data berhasil di update');
     }
 }
