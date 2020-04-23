@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('makanan', 'MakananController');
+Route::resource('karyawan', 'KaryawanController');
+
+Auth::routes();
+
+Route::get('/home', 'KaryawanController@index')->name('home');
