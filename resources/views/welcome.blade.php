@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: blanchedalmond;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -84,7 +84,9 @@
                     MY SHOP
                 </div>
 
-               
+
+
+
             </div>
         </div>
     </body>
