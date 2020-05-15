@@ -31,26 +31,23 @@
                 <div class="col-lg-12">
                      <table class="table table-borderless">
                     <tr>
-                         <td width="700"><b>Biodata</b></td>
-                         <td width="3000"></td>
-                         <td width="350"><b>Studi Kasus</b></td>
+                        
+                         
+                         <td width="700"><b>Studi Kasus</b></td>
                          <td width="4200"></td>
                      </tr>
                      <tr>
-                         <td>Nama</td>
-                         <td>I Kadek Aldi Bragi</td>
+                         
                          <td>Judul</td>
-                         <td>MY SHOP</td>
+                         <td>SISTEM MANAJEMEN TOKO PAKAIAN</td>
                      </tr>
                      <tr>
-                         <td>NIM</td>
-                         <td>1815051008</td>
+                        
                          <td>Penjelasan</td>
-                         <td>Sistem ini dibuat untuk memanajemen karyawan MY SHOP</td>
+                         <td>Sistem ini dibuat untuk memanajemen karyawan disebuah toko agar menjadi lebih baik</td>
                      </tr>
                      <tr>
-                         <td>Program Studi</td>
-                         <td>Pendidikan Teknik Informatika</td>
+                    
                          <td></td>
                          <td></td>
                      </tr>
